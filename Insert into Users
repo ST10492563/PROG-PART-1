@@ -1,0 +1,33 @@
+INSERT INTO Users
+(FirstName, LastName, Email, PasswordHash, Phone, Role)
+VALUES
+('Thandi', 'Mokoena',
+ 'thandi.mokoena@raceday.co.za',
+ 'ExampleHash001',
+ '0825550101',
+ 'Organiser'),
+
+('Sipho', 'Naidoo',
+ 'sipho.naidoo@raceday.co.za',
+ 'ExampleHash002',
+ '0835550102',
+ 'Organiser'),
+
+('Lerato', 'Dlamini',
+ 'lerato.dlamini@example.co.za',
+ 'ExampleHash003',
+ '0715550103',
+ 'Participant'),
+
+('Michael', 'Jacobs',
+ 'michael.jacobs@example.co.za',
+ 'ExampleHash004',
+ '0725550104',
+ 'Participant'),
+
+('Ayesha', 'Pillay',
+ 'ayesha.pillay@example.co.za',
+ 'ExampleHash005',
+ '0735550105',
+ 'Participant');
+GO

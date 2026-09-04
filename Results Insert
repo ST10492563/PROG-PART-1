@@ -1,0 +1,25 @@
+INSERT INTO Results
+(
+    EnrollmentID,
+    FinishTime,
+    Position,
+    AveragePace,
+    ResultStatus
+)
+VALUES
+(
+    1,
+    '00:52:34',
+    18,
+    '05:15/km',
+    'Finished'
+),
+
+(
+    2,
+    '00:58:21',
+    37,
+    '05:50/km',
+    'Finished'
+);
+GO

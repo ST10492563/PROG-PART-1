@@ -1,0 +1,37 @@
+INSERT INTO EventWeather
+(
+    EventID,
+    ForecastDate,
+    TemperatureC,
+    Condition,
+    WindSpeedKmh,
+    RainChancePercent
+)
+VALUES
+(
+    1,
+    '2026-10-18',
+    19.50,
+    'Partly Cloudy',
+    14.00,
+    20
+),
+
+(
+    2,
+    '2026-11-08',
+    21.00,
+    'Sunny',
+    11.00,
+    10
+),
+
+(
+    3,
+    '2026-12-06',
+    24.50,
+    'Clear',
+    18.00,
+    15
+);
+GO

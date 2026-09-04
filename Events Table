@@ -1,0 +1,29 @@
+CREATE TABLE Events
+(
+    EventID INT IDENTITY(1,1) PRIMARY KEY,
+    OrganiserID INT NOT NULL,
+    EventName VARCHAR(150) NOT NULL,
+    Description VARCHAR(500),
+    EventDate DATE NOT NULL,
+    StartTime TIME NOT NULL,
+    Location VARCHAR(150) NOT NULL,
+    Province VARCHAR(80) NOT NULL,
+    EntryFee DECIMAL(10,2) NOT NULL DEFAULT 0.00,
+    MaxParticipants INT NOT NULL,
+    Status VARCHAR(20) NOT NULL DEFAULT 'Upcoming',
+
+    CONSTRAINT CK_Events_EntryFee
+        CHECK (EntryFee >= 0),
+
+    CONSTRAINT CK_Events_MaxParticipants
+        CHECK (MaxParticipants > 0),
+
+    CONSTRAINT CK_Events_Status
+        CHECK (Status IN
+        ('Draft', 'Upcoming', 'Completed', 'Cancelled')),
+
+    CONSTRAINT FK_Events_Organiser
+        FOREIGN KEY (OrganiserID)
+        REFERENCES Users(UserID)
+);
+GO

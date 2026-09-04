@@ -1,0 +1,18 @@
+CREATE TABLE EventCategories
+(
+    EventID INT NOT NULL,
+    CategoryID INT NOT NULL,
+
+    PRIMARY KEY (EventID, CategoryID),
+
+    CONSTRAINT FK_EventCategories_Event
+        FOREIGN KEY (EventID)
+        REFERENCES Events(EventID)
+        ON DELETE CASCADE,
+
+    CONSTRAINT FK_EventCategories_Category
+        FOREIGN KEY (CategoryID)
+        REFERENCES Categories(CategoryID)
+        ON DELETE CASCADE
+);
+GO

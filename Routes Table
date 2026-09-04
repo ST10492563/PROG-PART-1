@@ -1,0 +1,20 @@
+CREATE TABLE Routes
+(
+    RouteID INT IDENTITY(1,1) PRIMARY KEY,
+    EventID INT NOT NULL UNIQUE,
+    RouteName VARCHAR(150) NOT NULL,
+    DistanceKm DECIMAL(6,2) NOT NULL,
+    ElevationGainM INT,
+    StartPoint VARCHAR(150) NOT NULL,
+    FinishPoint VARCHAR(150) NOT NULL,
+    RouteUrl VARCHAR(500),
+
+    CONSTRAINT CK_Routes_Distance
+        CHECK (DistanceKm > 0),
+
+    CONSTRAINT FK_Routes_Event
+        FOREIGN KEY (EventID)
+        REFERENCES Events(EventID)
+        ON DELETE CASCADE
+);
+GO

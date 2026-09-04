@@ -1,0 +1,53 @@
+INSERT INTO Events
+(
+    OrganiserID,
+    EventName,
+    Description,
+    EventDate,
+    StartTime,
+    Location,
+    Province,
+    EntryFee,
+    MaxParticipants,
+    Status
+)
+VALUES
+(
+    1,
+    'Durban Sunrise 10K',
+    'A coastal 10 km road race for recreational and competitive runners.',
+    '2026-10-18',
+    '06:30',
+    'Durban Beachfront',
+    'KwaZulu-Natal',
+    180.00,
+    1500,
+    'Upcoming'
+),
+
+(
+    2,
+    'Soweto Community Walk',
+    'A community-focused walking event promoting fitness and local participation.',
+    '2026-11-08',
+    '07:00',
+    'Soweto Community Centre',
+    'Gauteng',
+    80.00,
+    1000,
+    'Upcoming'
+),
+
+(
+    1,
+    'Cape Winelands Cycle Tour',
+    'A scenic road cycling event through the Cape Winelands.',
+    '2026-12-06',
+    '06:00',
+    'Stellenbosch Town Hall',
+    'Western Cape',
+    350.00,
+    800,
+    'Upcoming'
+);
+GO

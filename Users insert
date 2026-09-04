@@ -1,0 +1,15 @@
+INSERT INTO Categories
+(CategoryName, Description)
+VALUES
+('Road Running',
+ 'Road races such as 5 km, 10 km and marathon events.'),
+
+('Walking',
+ 'Community and charity walking events.'),
+
+('Cycling',
+ 'Road cycling events and organised cycle tours.'),
+
+('Trail Running',
+ 'Off-road running events on marked trails.');
+GO

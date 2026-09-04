@@ -1,0 +1,22 @@
+CREATE TABLE Results
+(
+    ResultID INT IDENTITY(1,1) PRIMARY KEY,
+    EnrollmentID INT NOT NULL UNIQUE,
+    FinishTime TIME,
+    Position INT,
+    AveragePace VARCHAR(20),
+    ResultStatus VARCHAR(20) NOT NULL DEFAULT 'Finished',
+
+    CONSTRAINT CK_Results_Position
+        CHECK (Position IS NULL OR Position > 0),
+
+    CONSTRAINT CK_Results_Status
+        CHECK (ResultStatus IN
+        ('Finished', 'DidNotFinish', 'Disqualified')),
+
+    CONSTRAINT FK_Results_Enrollment
+        FOREIGN KEY (EnrollmentID)
+        REFERENCES EventEnrollments(EnrollmentID)
+        ON DELETE CASCADE
+);
+GO

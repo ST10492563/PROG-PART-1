@@ -1,0 +1,23 @@
+CREATE TABLE EventWeather
+(
+    WeatherID INT IDENTITY(1,1) PRIMARY KEY,
+    EventID INT NOT NULL,
+    ForecastDate DATE NOT NULL,
+    TemperatureC DECIMAL(5,2),
+    Condition VARCHAR(80),
+    WindSpeedKmh DECIMAL(6,2),
+    RainChancePercent INT,
+    RecordedAt DATETIME2 NOT NULL DEFAULT SYSDATETIME(),
+
+    CONSTRAINT CK_EventWeather_Rain
+        CHECK (RainChancePercent BETWEEN 0 AND 100),
+
+    CONSTRAINT CK_EventWeather_Wind
+        CHECK (WindSpeedKmh >= 0),
+
+    CONSTRAINT FK_EventWeather_Event
+        FOREIGN KEY (EventID)
+        REFERENCES Events(EventID)
+        ON DELETE CASCADE
+);
+GO

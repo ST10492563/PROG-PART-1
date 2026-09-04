@@ -1,0 +1,26 @@
+CREATE TABLE EventEnrollments
+(
+    EnrollmentID INT IDENTITY(1,1) PRIMARY KEY,
+    EventID INT NOT NULL,
+    ParticipantID INT NOT NULL,
+    EnrollmentDate DATETIME2 NOT NULL DEFAULT SYSDATETIME(),
+    RaceNumber VARCHAR(20),
+    Status VARCHAR(20) NOT NULL DEFAULT 'Registered',
+
+    CONSTRAINT UQ_EventEnrollments
+        UNIQUE (EventID, ParticipantID),
+
+    CONSTRAINT CK_EventEnrollments_Status
+        CHECK (Status IN
+        ('Registered', 'Withdrawn', 'Completed')),
+
+    CONSTRAINT FK_EventEnrollments_Event
+        FOREIGN KEY (EventID)
+        REFERENCES Events(EventID)
+        ON DELETE CASCADE,
+
+    CONSTRAINT FK_EventEnrollments_Participant
+        FOREIGN KEY (ParticipantID)
+        REFERENCES Users(UserID)
+);
+GO

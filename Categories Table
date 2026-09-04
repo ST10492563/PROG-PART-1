@@ -1,0 +1,7 @@
+CREATE TABLE Categories
+(
+    CategoryID INT IDENTITY(1,1) PRIMARY KEY,
+    CategoryName VARCHAR(80) NOT NULL UNIQUE,
+    Description VARCHAR(255)
+);
+GO

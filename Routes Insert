@@ -1,0 +1,41 @@
+INSERT INTO Routes
+(
+    EventID,
+    RouteName,
+    DistanceKm,
+    ElevationGainM,
+    StartPoint,
+    FinishPoint,
+    RouteUrl
+)
+VALUES
+(
+    1,
+    'Golden Mile Coastal Loop',
+    10.00,
+    65,
+    'Durban Beachfront',
+    'Durban Beachfront',
+    'https://example.com/routes/durban-sunrise-10k'
+),
+
+(
+    2,
+    'Soweto Heritage Walk',
+    8.00,
+    45,
+    'Soweto Community Centre',
+    'Soweto Community Centre',
+    'https://example.com/routes/soweto-community-walk'
+),
+
+(
+    3,
+    'Winelands Scenic Loop',
+    75.00,
+    620,
+    'Stellenbosch Town Hall',
+    'Stellenbosch Town Hall',
+    'https://example.com/routes/winelands-cycle-tour'
+);
+GO

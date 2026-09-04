@@ -1,0 +1,15 @@
+CREATE TABLE Users
+(
+    UserID INT IDENTITY(1,1) PRIMARY KEY,
+    FirstName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    Email VARCHAR(120) NOT NULL UNIQUE,
+    PasswordHash VARCHAR(255) NOT NULL,
+    Phone VARCHAR(25),
+    Role VARCHAR(20) NOT NULL,
+    CreatedAt DATETIME2 NOT NULL DEFAULT SYSDATETIME(),
+
+    CONSTRAINT CK_Users_Role
+        CHECK (Role IN ('Organiser', 'Participant'))
+);
+GO
